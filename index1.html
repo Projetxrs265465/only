@@ -18,29 +18,29 @@
   async
   defer
 ></script>
-    <script>
-    (function () {
-      const url = window.location.href;
-      const chave = 'oly'; // ✅ sua keyword aqui
+ <script>
+  (function () {
+    const url = new URL(window.location.href);
+    const chave = 'oly'; // sua keyword aqui
+    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
+    const urlTemChave = url.searchParams.get('key') === chave;
 
-      const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
-      const urlTemChave = url.includes(`key=${chave}`);
+    if (isMobile && urlTemChave) {
+      // Remove apenas a chave, mantendo UTMs
+      url.searchParams.delete('key');
+      const novaUrl = url.origin + url.pathname + (url.search ? '?' + url.searchParams.toString() : '');
+      window.history.replaceState({}, document.title, novaUrl);
 
-      if (isMobile && urlTemChave) {
-        // 🔄 Remove a keyword da URL
-        const novaUrl = window.location.origin + window.location.pathname;
-        window.history.replaceState({}, document.title, novaUrl);
-
-        // ✅ Mostra conteúdo real
-        window.addEventListener('DOMContentLoaded', () => {
-          document.getElementById('conteudo').style.display = 'block';
-        });
-      } else {
-        // ❌ Não autorizado — redireciona ou bloqueia
-        window.location.href = 'https://www.google.com';
-      }
-    })();
-  </script>
+      // Mostra o conteúdo real
+      window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('conteudo').style.display = 'block';
+      });
+    } else {
+      // Não autorizado
+      window.location.href = 'https://www.google.com';
+    }
+  })();
+</script>
   <!-- Tailwind + FontAwesome + Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="css/all.min.css" rel="stylesheet">
