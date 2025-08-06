@@ -18,29 +18,21 @@
   async
   defer
 ></script>
- <script>
-  (function () {
-    const url = new URL(window.location.href);
-    const chave = 'oly'; // sua keyword aqui
-    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
-    const urlTemChave = url.searchParams.get('key') === chave;
+(function() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
 
-    if (isMobile && urlTemChave) {
-      // Remove apenas a chave, mantendo UTMs
-      url.searchParams.delete('key');
-      const novaUrl = url.origin + url.pathname + (url.search ? '?' + url.searchParams.toString() : '');
-      window.history.replaceState({}, document.title, novaUrl);
+    // Lista suja de devices mobile
+    var isMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua);
 
-      // Mostra o conteúdo real
-      window.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('conteudo').style.display = 'block';
-      });
-    } else {
-      // Não autorizado
-      window.location.href = 'https://www.google.com';
+    // Bloqueia bots mais manjados
+    var isBot = /googlebot|bingbot|crawler|spider|robot|crawling/i.test(ua);
+
+    if (!isMobile && !isBot) {
+        // PC humano vai pro deserto
+        window.location.href = "https://www.google.com";
     }
-  })();
-</script>
+})();
+
   <!-- Tailwind + FontAwesome + Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="css/all.min.css" rel="stylesheet">
