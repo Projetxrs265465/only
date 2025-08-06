@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackZone Access - Exclusive Premium Experience</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo img {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .features {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #00d4ff;
+        }
+
+        .features p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .benefit {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .benefit h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00d4ff;
+            margin-bottom: 20px;
+        }
+
+        .payment-container {
+            margin-top: 30px;
+        }
+
+        .urgency {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .features {
+                padding: 25px;
+            }
+            
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pngwing.com-12-e1736313111410.png-jjcscZsZL3cwXaItKXUxvQs4sLULgl.webp" alt="Platform Logo">
+        </div>
+
+        <div class="hero">
+            <h1>BlackZone Access</h1>
+            <p class="subtitle">Enter the Elite Circle of Premium Users</p>
+        </div>
+
+        <div class="features">
+            <h2>Unlock Exclusive Premium Territory</h2>
+            <p>Step into a private sanctuary reserved for the most discerning users. BlackZone Access grants you entry to an exclusive area of the platform where sophistication meets functionality, and premium experiences await at every turn.</p>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <h3>🏆 Priority Access</h3>
+                    <p>Get early access to the highest-rated profiles before anyone else</p>
+                </div>
+                <div class="benefit">
+                    <h3>✨ Exclusive Features</h3>
+                    <p>Unlock premium tools and functionalities unavailable to regular users</p>
+                </div>
+                <div class="benefit">
+                    <h3>🔒 Private Environment</h3>
+                    <p>Enjoy a quieter, more refined browsing experience with enhanced privacy</p>
+                </div>
+                <div class="benefit">
+                    <h3>🎯 Enhanced Control</h3>
+                    <p>Advanced filtering and customization options for the ultimate user experience</p>
+                </div>
+            </div>
+
+            <p>Perfect for users who value discretion, aesthetics, and a differentiated navigation experience. BlackZone Access transforms your platform interaction into something truly exceptional.</p>
+        </div>
+
+        <div class="urgency">
+            ⚡ LIMITED TIME OFFER - Join the Elite Today! ⚡
+        </div>
+
+        <div class="cta-section">
+            <div class="price">$16.90</div>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">One-time payment for lifetime access</p>
+            
+            <div class="payment-container">
+                <!-- HOTMART - Sales Funnel Widget -->
+                <div id="hotmart-sales-funnel"></div>
+                <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+                <script>checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')</script>
+                <!-- HOTMART - Sales Funnel Widget -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
